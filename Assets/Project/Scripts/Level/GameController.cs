@@ -12,16 +12,15 @@ namespace Assets.Project.Scripts.Level
 
         [SerializeField] private TMP_Text _addMoney, _removeMoney;
         [SerializeField] private int _money = 40;
-
         [SerializeField] private Slider _slider;
         [SerializeField] private Text _status;
         [SerializeField] private Image _sliderFillImage;
-
+        [SerializeField] private Color32 _orange;
+        [SerializeField] private GameObject _ui;
         private StatusType _statusType;
 
         public Action<StatusType> OnStatusTypeRefreshHandler { get; set; }
-
-        [SerializeField] private Color32 _orange;
+        public bool IsAbleInput { get; private set; }
 
         private void Awake()
         {
@@ -40,6 +39,14 @@ namespace Assets.Project.Scripts.Level
             _slider.value = _money;
             _statusType = StatusType.Poor;
         }
+
+        public void AcceptGuide()
+        {
+            IsAbleInput = true;
+            _ui.SetActive(false);
+        }
+
+        public void TurnOffInput() => IsAbleInput = false;
 
         public void AddMoney(int money)
         {

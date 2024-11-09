@@ -10,6 +10,7 @@ namespace Assets.Project.Scripts.Level
             if (collide.TryGetComponent(out PlayerController player))
             {
                 SoundController.Instance.PlaySound(SoundTypes.Win);
+                GameController.Instance.TurnOffInput();
                 player.WinState();
             }
         }

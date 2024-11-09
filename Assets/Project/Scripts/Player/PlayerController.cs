@@ -10,7 +10,7 @@ namespace Assets.Project.Scripts.Player
         [SerializeField] private GameObject[] _statusTypes;
         [SerializeField] private float _speed = 1f;
         [SerializeField] private GameObject _model;
-        private bool _isAbleInput = true;
+        private bool _isAbleInput => GameController.Instance.IsAbleInput;
         private Animator _animator;
         private int IS_MOVEMENT = Animator.StringToHash("isWalk");
         private int SPIN = Animator.StringToHash("Spin");
@@ -22,7 +22,6 @@ namespace Assets.Project.Scripts.Player
         {
             _animator = GetComponentInChildren<Animator>();
         }
-
 
         private void Start()
         {
@@ -39,10 +38,7 @@ namespace Assets.Project.Scripts.Player
         }
 
         public void WinState()
-        {
-            _animator.SetTrigger(WIN);
-            _isAbleInput = false;
-        }
+        => _animator.SetTrigger(WIN);
 
         private void PlayerMovement()
         {

@@ -1,4 +1,5 @@
-﻿using Assets.Project.Scripts.Player;
+﻿using Assets.Project.Scripts.Enum;
+using Assets.Project.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Project.Scripts.Level

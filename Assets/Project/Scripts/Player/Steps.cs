@@ -1,9 +1,10 @@
-﻿using Assets.Project.Scripts.Level;
+﻿using Assets.Project.Scripts.Enum;
+using Assets.Project.Scripts.Level;
 using UnityEngine;
 
 namespace Assets.Project.Scripts.Player
 {
-    public class Steps :MonoBehaviour
+    public class Steps : MonoBehaviour
     {
         public void StepSound()
         => SoundController.Instance.PlaySound(SoundTypes.Step);

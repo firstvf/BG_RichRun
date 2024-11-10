@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Project.Scripts.Enum;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +30,6 @@ namespace Assets.Project.Scripts.Level
 
         public void GetReward()
         {
-            //SceneController.Instance.LoadNextScene(SceneType.Game2);
             StartCoroutine(CollectMoneyCoroutine());
         }
 

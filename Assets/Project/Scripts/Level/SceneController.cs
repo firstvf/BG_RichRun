@@ -1,15 +1,11 @@
-﻿using System;
+﻿using Assets.Project.Scripts.Enum;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Project.Scripts.Level
 {
-    public enum SceneType
-    {
-        Game = 0,
-        Game2 = 1,
-    }
 
     public class SceneController : MonoBehaviour
     {

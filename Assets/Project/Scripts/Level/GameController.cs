@@ -17,6 +17,8 @@ namespace Assets.Project.Scripts.Level
         [SerializeField] private Image _sliderFillImage;
         [SerializeField] private Color32 _orange;
         [SerializeField] private GameObject _ui;
+        [SerializeField] private Text _pointsText;
+        [SerializeField] private GameObject _winUI;
         private StatusType _statusType;
 
         public Action<StatusType> OnStatusTypeRefreshHandler { get; set; }
@@ -38,6 +40,8 @@ namespace Assets.Project.Scripts.Level
             _slider.maxValue = 100;
             _slider.value = _money;
             _statusType = StatusType.Poor;
+
+            _pointsText.text = _money.ToString();
         }
 
         public void AcceptGuide()
@@ -47,6 +51,14 @@ namespace Assets.Project.Scripts.Level
         }
 
         public void TurnOffInput() => IsAbleInput = false;
+
+        public void SetWinUI()
+        {
+            _winUI.SetActive(true);
+            _pointsText.gameObject.SetActive(false);
+        }
+
+        public int GetMoney() => _money;
 
         public void AddMoney(int money)
         {
@@ -73,6 +85,8 @@ namespace Assets.Project.Scripts.Level
         private void UpdateStatus()
         {
             _slider.value = _money;
+
+            _pointsText.text = _money.ToString();
 
             if (_money >= 60)
                 SetStatus(Color.green, "БОГАТЫЙ", StatusType.Rich);

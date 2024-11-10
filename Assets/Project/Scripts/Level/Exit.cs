@@ -11,6 +11,7 @@ namespace Assets.Project.Scripts.Level
             {
                 SoundController.Instance.PlaySound(SoundTypes.Win);
                 GameController.Instance.TurnOffInput();
+                GameController.Instance.SetWinUI();
                 player.WinState();
             }
         }
